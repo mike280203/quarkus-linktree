@@ -1,0 +1,41 @@
+plugins {
+    id 'java'
+    id 'io.quarkus'
+    id 'io.mvnpm.gradle.plugin.native-java-plugin' version '1.0.0'
+}
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+}
+
+dependencies {
+    implementation enforcedPlatform("${quarkusPlatformGroupId}:${quarkusPlatformArtifactId}:${quarkusPlatformVersion}")
+
+    implementation 'io.quarkiverse.renarde:quarkus-renarde:3.1.6'
+    implementation 'io.quarkiverse.web-bundler:quarkus-web-bundler:2.3.1'
+
+    implementation 'io.quarkus:quarkus-arc'
+    implementation 'io.quarkus:quarkus-hibernate-orm-panache'
+    implementation 'io.quarkus:quarkus-jdbc-h2'
+    implementation 'io.quarkus:quarkus-jdbc-postgresql'
+
+    testImplementation 'io.quarkus:quarkus-junit'
+}
+
+group = 'dev.mike'
+version = '1.0.0-SNAPSHOT'
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_25
+    targetCompatibility = JavaVersion.VERSION_25
+}
+
+compileJava {
+    options.encoding = 'UTF-8'
+    options.compilerArgs << '-parameters'
+}
+
+compileTestJava {
+    options.encoding = 'UTF-8'
+}
