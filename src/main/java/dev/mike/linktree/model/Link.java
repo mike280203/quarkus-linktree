@@ -1,4 +1,4 @@
-package model;
+package dev.mike.linktree.model;
 
 import java.util.List;
 
