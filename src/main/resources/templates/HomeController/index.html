@@ -15,10 +15,12 @@
             {#if links.size > 0}
                 {#for link in links}
                     <article>
-                        {#if link.icon != null}
-                            <i class="{link.icon}"></i>
-                        {/if}
-                        <h2>{link.title}</h2>
+                        <header>
+                            {#if link.icon}
+                                <i class="{link.icon}"></i>
+                            {/if}
+                            <h2>{link.title}</h2>
+                        </header>
                         <p>{link.description}</p>
                         <a href="{link.url}" target="_blank" rel="noopener noreferrer">
                             Öffnen
