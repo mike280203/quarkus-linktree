@@ -29,6 +29,7 @@ public class Link extends PanacheEntity {
     @Column(nullable = false)
     public boolean active = true;
 
+
     public static List<Link> findActiveOrdered() {
         return find("active = true order by sortOrder asc, id asc").list();
     }

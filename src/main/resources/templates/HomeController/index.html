@@ -12,15 +12,15 @@
 
         <section>
             {#if links.size > 0}
-            {#for link in links}
-                <article>
-                    <h2>{link.title}</h2>
-                    <p>{link.description}</p>
-                    <a href="{link.url}" target="_blank" rel="noopener noreferrer">
-                        Öffnen
-                    </a>
-                </article>
-            {/for}
+                {#for link in links}
+                    <article>
+                        <h2>{link.title}</h2>
+                        <p>{link.description}</p>
+                        <a href="{link.url}" target="_blank" rel="noopener noreferrer">
+                            Öffnen
+                        </a>
+                    </article>
+                {/for}
             {#else}
                 <p>Keine Links vorhanden</p>
             {/if}
