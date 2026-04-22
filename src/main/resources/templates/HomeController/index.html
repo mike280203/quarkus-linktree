@@ -11,6 +11,7 @@
         <p>Meine Links</p>
 
         <section>
+            {#if links.size > 0}
             {#for link in links}
                 <article>
                     <h2>{link.title}</h2>
@@ -20,6 +21,9 @@
                     </a>
                 </article>
             {/for}
+            {#else}
+                <p>Keine Links vorhanden</p>
+            {/if}
         </section>
     </main>
 </body>
