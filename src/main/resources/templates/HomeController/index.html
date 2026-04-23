@@ -5,26 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mike Links</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"/>
+    {#bundle /}
 </head>
 <body>
-    <main>
-        <h1>Mike</h1>
-        <p>Meine Links</p>
+    <main class="main">
+        <section class="profile">
+            <h1>Mike</h1>
+            <p>Meine Links</p>
+        </section>
 
-        <section>
+        <section class="links">
             {#if links.size > 0}
                 {#for link in links}
-                    <article>
-                        <header>
+                    <article class="link-card">
+                        <header class="link-card-header">
                             {#if link.icon}
                                 <i class="{link.icon}"></i>
                             {/if}
                             <h2>{link.title}</h2>
                         </header>
-                        <p>{link.description}</p>
-                        <a href="{link.url}" target="_blank" rel="noopener noreferrer">
-                            Öffnen
-                        </a>
+                        <div class="link-card-body">
+                            <p>{link.description}</p>
+                            <a href="{link.url}" target="_blank" rel="noopener noreferrer">
+                                Öffnen
+                            </a>
+                        </div>
                     </article>
                 {/for}
             {#else}
